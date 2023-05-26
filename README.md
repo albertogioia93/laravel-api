@@ -1,64 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# CRONOSTORIA DEL MIO OPERATO DI GIO 25/05/2023: ESERCIZIO Laravel Boolfolio - API
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+LARAVEL API IN PROGETTO BACKEND COMUNICANO CON PROGETTO VITE FRONTEND:
 
-## About Laravel
+(VS CODE LARAVEL)
+Sto usando il database di phpMyAdmin 'esercizio_laravel_auth'
+(terminale laravel) php artisan make:controller Api/ProjectController
+app/Http/Controllers/Api/ProjectController.php (scrivo codice per passare la lista dei miei post del database in formato json)
+routes/api.php --- scrivo codice: Route::get('test', [ProjectController::class, 'index']); NOTA:ProjectController scelgo quello di Api, non Admin
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+(VS CODE VITE)
+(terminale vite) npm install
+src/components creo i file AppHeader.vue, AppMain.vue e AppFooter.vue (dentro questi 3 file scrivo codice)
+src/App.vue importo e registro quei file appena creati
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+importo bootstrap
+(terminale vite) stoppo server ctrl+c, npm install bootstrap@5.3.0-alpha3
+src/main.js scrivo: import * as bootstrap from 'bootstrap';
+src/assets/scss/main.scss scrivo: @import "bootstrap/scss/bootstrap";
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+src/assets/scss/_partial creo file _header.scss
+src/assets/scss/main.scss importo il file appena creato: @import "_partial/header";
 
-## Learning Laravel
+importo axios
+(terminale vite) stoppo server ctrl+c, npm install axios
+src/App.vue importo axios scrivendo: import axios from 'axios';
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-----------------------------------------------------------------------------------------------------------------------------------
+# CRONOSTORIA DEL MIO OPERATO DI VEN 26/05/2023: ESERCIZIO Laravel Boolfolio - API
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+(VS CODE LARAVEL)
+resources/views/partials creo 2 file errors.blade.php e message.blade.php (scrivo codici dentro)
+app/Http/Controllers/Api/ProjectController.php (scrivo codice)
 
-## Laravel Sponsors
+(VS CODE VITE)
+src/components/AppMain.vue (scrivo codice)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+(VS CODE LARAVEL)
+app/Models/Post.php (aggiungo funzioni che rendono il titolo del post in maiuscolo e restituiscono img anche qualora cambiasse la loro url)
 
-### Premium Partners
+(VS CODE LARAVEL)
+routes/api.php (scrivo codice)
+app/Http/Controllers/Api/ProjectController.php (scrivo codice)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+(VS CODE VITE)
+(terminale) npm install vue-router@4
+src/App.vue (scrivo codice)
+dentro src creo cartella pages e dentro questa cartella creo file AppHome.vue (scrivo codice)
+src/pages creo file AboutPage.vue (scrivo codice)
+src/pages creo file BlogPage.vue (scrivo codice)
+src/pages creo file PostPage.vue (scrivo codice)
+dentro src creo file router.js (scrivo codice)
+src/main.js (scrivo codice)
+src/components/AppHeader.vue (scrivo codice)
+src/components rinomino AppMain.vue in CardPost.vue (scrivo codice)
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+DA CHIEDERE LUNEDì A LEZIONE:
+QUANDO CLICCO SUL BOTTONE 'Leggi descrizione progetto' dalla card OTTENGO IL SEGUENTE ERRORE= Request failed with status code 500
