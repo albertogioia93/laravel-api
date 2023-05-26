@@ -10,7 +10,8 @@ class ProjectController extends Controller
 {
     public function index(){
 
-        $posts = Post::all(); //metodo posts per prendere i dati dalla tabella posts del database su phpmyadmin
+        // $posts = Post::all(); //metodo posts per prendere i dati dalla tabella posts del database su phpmyadmin
+        $posts = Post::with('type', 'technologies')->paginate(3);
         return response()->json([
             'success' => true,
             'results' => $posts
