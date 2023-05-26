@@ -19,4 +19,23 @@ class ProjectController extends Controller
 
         //oppure: return response()->json($posts);
     }
+
+    public function show(string $slug)
+    {
+
+        $post = Post::where('slug', $slug)->with('type', 'technologies')->first();
+
+
+        if ($post) {
+            return response()->json([
+                'success' => true,
+                'results' => $post
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'results' => null
+            ], 404);
+        }
+    }
 }

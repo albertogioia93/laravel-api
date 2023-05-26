@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('posts', [ProjectController::class, 'index']);
+Route::get('posts/{slug}', [PostController::class, 'show']);
