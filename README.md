@@ -54,5 +54,28 @@ src/main.js (scrivo codice)
 src/components/AppHeader.vue (scrivo codice)
 src/components rinomino AppMain.vue in CardPost.vue (scrivo codice)
 
-DA CHIEDERE LUNEDì A LEZIONE:
-QUANDO CLICCO SUL BOTTONE 'Leggi descrizione progetto' dalla card OTTENGO IL SEGUENTE ERRORE= Request failed with status code 500
+# CRONOSTORIA DEL MIO OPERATO DI LUN 29/05/2023: ESERCIZIO Laravel Boolfolio - API
+
+(VS CODE LARAVEL)
+app/http/controllers/api/projectcontroller.php (scrivo codice)
+php artisan make:controller Api/TypeController
+php artisan make:controller Api/TechnologyController
+app/http/controllers/admin/api/TypeController.php (scrivo codice)
+app/http/controllers/admin/api/TechnologyController.php (scrivo codice)
+routes/api.php (scrivo codice) - prendere TypeController e TechnologyController di cartella api, non admin
+
+(VS CODE VITE)
+src/pages/BlogPage.vue (scrivo codice)
+src/pages/PostPage.vue (scrivo codice)
+src/router.js
+src/pages creo file e lo chiamo NotFoundPage.vue (scrivo codice)
+src/components/CardPost.vue (scrivo codice)
+src/components creo file TypeList.vue (scrivo codice)
+src/components creo file TechnologyList.vue (scrivo codice)
+src/pages/ creo file TypePage.vue (scrivo codice)
+src/pages/ creo file TechnologyPage.vue (scrivo codice)
+src/components/AppHeader.vue (scrivo codice)
+
+(BONUS DA RIVEDERE E NON FATTO NELL'ESERCIZIO)
+src/ nuovo file store.js (scrivo codice) (DA RIVEDERE)
+creo file .env (guardo registrazione lezione per sapere che devo scrivere)
