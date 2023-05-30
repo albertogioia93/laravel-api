@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\ProjectController;
+// use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TypeController;
+use App\Http\Controllers\Admin\CommentController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +27,13 @@ Route::get('/', function(){
     // })->middleware(['auth', 'verified'])->name('dashboard');
     
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [ProjectController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('posts', PostController::class)->parameters(['posts'=>'post:slug']);
+    Route::resource('types', TypeController::class)->parameters(['types'=>'type:slug']);
+
+    // comment delete
+    Route::delete('comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 });
 

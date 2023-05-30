@@ -25,7 +25,7 @@ class ProjectController extends Controller
     {
 
         try {
-            $post = Post::where('slug', $slug)->with('type', 'technologies')->first();
+            $post = Post::where('slug', $slug)->with('type', 'technologies', 'comments')->first();
 
             if ($post) {
                 return response()->json([
