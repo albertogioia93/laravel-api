@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TypeController;
 use App\Http\Controllers\Api\TechnologyController;
+use App\Http\Controllers\Api\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,6 @@ Route::get('technologies', [TechnologyController::class, 'index']);
 
 //technology show
 Route::get('technologies/{slug}', [TechnologyController::class, 'show']);
+
+//comments post
+Route::post('comments', [CommentController::class, 'store']);
