@@ -9,3 +9,4 @@ class Comment extends Model
 {
     use HasFactory;
 }
+// configurazione modello comment
