@@ -21,6 +21,10 @@ class Post extends Model
         return $this->belongsToMany(Technology::class)->withTimestamps();
     }
 
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
     protected function title(): Attribute
     {
         return Attribute::make(
